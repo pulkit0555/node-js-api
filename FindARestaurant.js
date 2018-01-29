@@ -15,7 +15,7 @@ app.get('/getMealPlaces/:placeName/:query', function(req, res){
 var coords="";
 var arr = [];
 // requesting latlon from google geocoding API
-Request.get("https://maps.googleapis.com/maps/api/geocode/json?address="+req.params.placeName+"&key=<<Insert google GEOCODE API KEY HERE (WITHOUT QOTES)>>", (error, response, body) => {
+Request.get("https://maps.googleapis.com/maps/api/geocode/json?address="+req.params.placeName+"&key=<<Insert google GEOCODE API KEY HERE (WITHOUT QUOTES)>>", (error, response, body) => {
     if(error) {
         return console.dir(error);
     }
@@ -46,7 +46,7 @@ Request.get("https://maps.googleapis.com/maps/api/geocode/json?address="+req.par
 	console.log(coords);
     // finding restaurantName , adddress and image based on foursquare API
     console.log(coords);
-    Request.get("https://api.foursquare.com/v2/venues/explore/?ll="+coords+"&query="+req.params.query+"&client_id=<<InsertClientId(WITHOUT QOTES)>>&client_secret=<<InsertClientSecret(WITHOUT QOTES)>>&v=20131124", (error, response, body) => {
+    Request.get("https://api.foursquare.com/v2/venues/explore/?ll="+coords+"&query="+req.params.query+"&client_id=<<InsertClientId(WITHOUT QUOTES)>>&client_secret=<<InsertClientSecret(WITHOUT QUOTES)>>&v=20131124", (error, response, body) => {
     if(error) {
         return console.dir(error);
     }
